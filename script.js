@@ -97,3 +97,12 @@ function cookie(x){
   }
 }
 console.log(cookie(true))
+
+//Напишите функцию, которая возвращает общую площадь поверхности и объем куба.
+
+function getSize(width, height, depth){
+  const volume = width*height*depth
+  const surface = 2*(width*height+width*depth+height*depth)
+  return [volume,surface]
+}
+console.log( getSize(4, 2, 6))
