@@ -4,10 +4,10 @@
 //"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
 //"8aaaaa dddd r     " -> "8aaaaaddddr"
 
-function noSpace(x){
-   return x.replaceAll(" ", "")
-}
-console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
+// function noSpace(x){
+//    return x.replaceAll(" ", "")
+// }
+// console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
 
 //Учитывая случайное неотрицательное число, вам необходимо вернуть цифры этого числа 
 //в массиве в обратном порядке.
@@ -18,16 +18,16 @@ console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
 //  Число всегда будет положительным целым числом, большим 0. Ваша функция должна возвращать только результат. 
 // В примере ниже в скобках показано, как получить этот результат, и это не является его частью. 
 // См. примеры тестов.
-//Например (Вход -> Выход) // 2 -> 3 (1 + 2)// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+// //Например (Вход -> Выход) // 2 -> 3 (1 + 2)// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
 
-function summation(num) {
-    let sum = 0
-  for(let i = 0; i<=num; i++){
-    sum+=i
-  }
-  return sum
-}
-console.log(summation(30))
+// function summation(num) {
+//     let sum = 0
+//   for(let i = 0; i<=num; i++){
+//     sum+=i
+//   }
+//   return sum
+// }
+// console.log(summation(30))
 
 //Весной цветёт японская вишня, её называют «сакурой», и ею восхищаются все. Лепестки начинают опадать в конце
 // Предположим, что скорость падения лепестка составляет 5 сантиметров в секунду (5 см/с), 
@@ -37,20 +37,51 @@ console.log(summation(30))
 // что скорость постоянна во время его падения. Обратите внимание на типы данных.Если начальная скорость 
 // неположительна, возвращаемое значение должно быть 0
 
-// h = ?; v = 5; t = 80 // h = 5*80 // h = 400 
-// t = 400 / v
+// // h = ?; v = 5; t = 80 // h = 5*80 // h = 400 
+// // t = 400 / v
 
-function sakuraFall(v) {
-    if(v<=0){
-        return 0
-    }else {
-        return 400/v
-    }
-}
-console.log(sakuraFall(-5))
+// function sakuraFall(v) {
+//     if(v<=0){
+//         return 0
+//     }else {
+//         return 400/v
+//     }
+// }
+// console.log(sakuraFall(-5))
 
-function sakuraFall(v) {
-     return v<=0 ? 0: 400/v;
+// function sakuraFall(v) {
+//      return v<=0 ? 0: 400/v;
+// }
+// console.log(sakuraFall(50))
+
+//Всем известно классическое правило знакомств «половина вашего возраста плюс семь» , которому
+//  следуют многие (включая меня). Это «рекомендуемый» возрастной диапазон для свиданий.
+
+function datingRange(age){
+  let ageMax = 0
+  let ageMin = 0
+  if(age <= 14){
+    ageMax = age + 0.10 * age
+    ageMin = age - 0.10 * age
+  } else {
+    ageMin = age/2 + 7
+    ageMax = 2*(age -7)
+  }
+  return `${Math.floor(ageMin)}-${Math.floor(ageMax)}`
 }
-console.log(sakuraFall(50))
+console.log(datingRange(19))
+
+//Вы с другом решили поиграть в игру, чтобы потренировать свою статистическую интуицию. Игра работает 
+// следующим образом: У вас есть куча красных и синих шариков. Чтобы начать игру, возьмите горсть 
+// шариков каждого цвета и сложите их в мешок, подсчитывая количество шариков каждого цвета.
+//  Вы по очереди лезете в мешок, угадываете цвет и вытаскиваете по одному шарику. Если вы угадали правильно,
+//  вы получаете очко. Секрет в том, что у вас всего три секунды, чтобы сделать предположение, поэтому 
+// нужно быстро соображать.
+
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+  let allPulled = (blueStart - bluePulled)+(redStart-redPulled)
+  let allBlue = blueStart - bluePulled
+  return allBlue/allPulled
+}
+console.log(guessBlue(7,5,5,3))
 
