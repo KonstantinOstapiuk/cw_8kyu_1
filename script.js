@@ -4,30 +4,28 @@
 //"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
 //"8aaaaa dddd r     " -> "8aaaaaddddr"
 
-// function noSpace(x){
-//    return x.replaceAll(" ", "")
-// }
-// console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
+function noSpace(x){
+   return x.replaceAll(" ", "")
+}
+console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"))
 
 //Учитывая случайное неотрицательное число, вам необходимо вернуть цифры этого числа 
 //в массиве в обратном порядке.
-
 //Пример (Вход => Выход): // 35231 => [1,3,2,5,3] // 0 => [0]
-
 //Напишите программу, которая вычисляет сумму всех чисел от 1 до указанного числа (включительно).
 //  Число всегда будет положительным целым числом, большим 0. Ваша функция должна возвращать только результат. 
 // В примере ниже в скобках показано, как получить этот результат, и это не является его частью. 
 // См. примеры тестов.
 // //Например (Вход -> Выход) // 2 -> 3 (1 + 2)// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
 
-// function summation(num) {
-//     let sum = 0
-//   for(let i = 0; i<=num; i++){
-//     sum+=i
-//   }
-//   return sum
-// }
-// console.log(summation(30))
+function summation(num) {
+    let sum = 0
+  for(let i = 0; i<=num; i++){
+    sum+=i
+  }
+  return sum
+}
+console.log(summation(30))
 
 //Весной цветёт японская вишня, её называют «сакурой», и ею восхищаются все. Лепестки начинают опадать в конце
 // Предположим, что скорость падения лепестка составляет 5 сантиметров в секунду (5 см/с), 
@@ -40,19 +38,19 @@
 // // h = ?; v = 5; t = 80 // h = 5*80 // h = 400 
 // // t = 400 / v
 
-// function sakuraFall(v) {
-//     if(v<=0){
-//         return 0
-//     }else {
-//         return 400/v
-//     }
-// }
-// console.log(sakuraFall(-5))
+function sakuraFall(v) {
+    if(v<=0){
+        return 0
+    }else {
+        return 400/v
+    }
+}
+console.log(sakuraFall(-5))
 
-// function sakuraFall(v) {
-//      return v<=0 ? 0: 400/v;
-// }
-// console.log(sakuraFall(50))
+function sakuraFall(v) {
+     return v<=0 ? 0: 400/v;
+}
+console.log(sakuraFall(50))
 
 //Всем известно классическое правило знакомств «половина вашего возраста плюс семь» , которому
 //  следуют многие (включая меня). Это «рекомендуемый» возрастной диапазон для свиданий.
@@ -85,3 +83,17 @@ function guessBlue(blueStart, redStart, bluePulled, redPulled) {
 }
 console.log(guessBlue(7,5,5,3))
 
+//Для решения этой задачи необходимо создать программу, которая определяет, кто съел последнее печенье. 
+// Если входные данные — строка, то печенье съел «Зак». Если входные данные — число с плавающей точкой или 
+// целое число, то печенье съела «Моника». Если входные данные — что-то другое, то печенье съела «собака».
+
+function cookie(x){
+  if(typeof x ==="string"){
+    return "Who ate the last cookie? It was Zach!"
+  } else if(typeof x ==="number"){
+    return "Who ate the last cookie? It was Monica!"
+  } else {
+    return "Who ate the last cookie? It was the dog!"
+  }
+}
+console.log(cookie(true))
